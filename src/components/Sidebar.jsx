@@ -34,11 +34,11 @@ export default function Sidebar({initialMenuItems}) {
       <ul>
         {menuItems
           .filter((item) =>
-            item.toLowerCase().included(filter.toLowerCase())
+            item.toLowerCase().includes(filter.toLowerCase())
           )
-          .map((item, index) => (
-            <li key={index}>{item}</li>
-          ))
+          .map((item, index) => {
+            return <li key={index}>{item}</li>
+          })
         }
       </ul>
 
